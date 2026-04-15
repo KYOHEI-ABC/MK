@@ -1,3 +1,5 @@
+class_name Player
+
 extends Node2D
 
 var velocity: Vector2 = Vector2.ZERO
@@ -7,7 +9,6 @@ var velocity: Vector2 = Vector2.ZERO
 
 var turn_cnt = 0
 func _ready():
-	Engine.max_fps = 60
 	position.x = model.position.x
 	position.y = model.position.z
 	
@@ -27,12 +28,12 @@ func _process(delta):
 		turn_cnt += 1
 	else:
 		if turn_cnt > 60:
-			velocity += forward * 0.8
+			velocity += forward * 0.7
 		turn_cnt = 0
 	
 	
 	velocity += forward * 0.015
-	print(velocity.length())
+	#print(velocity.length())
 	position += velocity
 	
 	velocity *= 0.97
