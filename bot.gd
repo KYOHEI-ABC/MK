@@ -7,7 +7,7 @@ var map_size: Vector2
 var velocity:Vector2
 var rot_hist:Array[int]
 var is_corner:bool=false
-var senser_pos= 48
+var senser_pos= 46
 
 @onready var model = $"../MeshInstance3D"
 
@@ -64,7 +64,11 @@ func _process(delta: float) -> void:
 	
 	velocity += direction * 0.015
 	position += velocity
-	velocity *= 0.97
+
+	if is_dirt(position):
+		velocity *= 0.9
+	else:
+		velocity *= 0.97
 
 
 	model.position.x = position.x

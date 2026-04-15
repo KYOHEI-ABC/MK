@@ -56,7 +56,6 @@ z_index = -1
 texture = ExtResource("3_lquwl")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-enabled = false
 script = ExtResource("6_272bh")
 
 [node name="Player" type="Node" parent="."]
