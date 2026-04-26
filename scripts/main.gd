@@ -1,7 +1,6 @@
 extends Node
 
 var player: Car
-var key_pressed_count: int = 0
 
 func _ready() -> void:
 	Engine.max_fps = 60
@@ -12,14 +11,18 @@ func _ready() -> void:
 
 	
 func _process(delta: float) -> void:
-	if Input.is_key_pressed(KEY_A):
-		player.rotation_degrees += -1
-	if Input.is_key_pressed(KEY_D):
-		player.rotation_degrees += 1
-	
-	if Input.is_key_pressed(KEY_A) or Input.is_key_pressed(KEY_D):
-		key_pressed_count += 1
-	else:
-		if key_pressed_count > 60:
-			player.power += Vector2.UP.rotated(player.rotation)
-		key_pressed_count = 0
+	pass
+	#if Input.is_key_pressed(KEY_D):
+		#if player.rotate == -3:
+			#player.rotate = -1
+		#else:
+			#player.rotate = 3
+		#
+	#if Input.is_key_pressed(KEY_A):
+		#if player.rotate == 3:
+			#player.rotate = 1
+		#else:
+			#player.rotate = -3
+#
+	#if not Input.is_key_pressed(KEY_A) and  not Input.is_key_pressed(KEY_D):
+		#player.rotate = 0
